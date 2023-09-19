@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>   
+    <header>
+        <img src="black.png" alt="Header Image">
+    </header>
+    <div class="content">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Platform</th>
+                <th>Last Traded Price</th>
+                <th>Buy</th>
+                <th>Sell</th>
+                <th>Volume</th>
+                <th>Base Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach((item, index)=> { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td>
+                        <div class="platform-cell">
+                            <!-- Insert an image based on the platform name -->
+                            <% if (item.name === "btcinr") { %>
+                                <img src="btcinr.png" class="small-icon">
+                            <% } else if (item.name === "yfiinr") { %>
+                                <img src="yfiinr.png" class="small-icon">
+                            <% } else if (item.name === "paxginr") { %>
+                                <img src="paxginr.png" class="small-icon">
+                            <% } else if (item.name === "ethinr") { %>
+                                <img src="ethinr.png" class="small-icon">
+                            <% } else if (item.name === "mkrinr") { %>
+                                <img src="mkrinr.png" class="small-icon">
+                            <% }  else if (item.name === "yfiwrx") { %>
+                                <img src="yfiwrx.jpg" class="small-icon">
+                            <% } else if (item.name === "yfiiinr") { %>
+                                <img src="yfiiinr.jpg" class="small-icon">
+                            <% } else if (item.name === "btcusdt") { %>
+                                <img src="btcinr.png" class="small-icon">
+                            <% } else if (item.name === "bnbinr") { %>
+                                <img src="bnbinr.png" class="small-icon">
+                            <% } else if (item.name === "ethwrx") { %>
+                                <img src="ethwrx.png" class="small-icon">
+                            <% } else { %>
+                                
+                            <% } %>
+                            <%= item.name %>
+                        </div>       
+                    </td>
+                    <td><%= item.last %></td>
+                    <td><%= item.buy %></td>
+                    <td><%= item.sell %></td>
+                    <td><%= item.volume %></td>
+                    <td><%= item.base_unit %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <aside>
+        <img src="foot.png" alt="Aside Image">
+    </aside>
+    <footer>
+        <img src="fixed.png" alt="Footer Image">
+    </footer>
+</body>
+</html>
