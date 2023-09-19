@@ -1,4 +1,5 @@
 In this project there are certain files like connect.js, script.js and many more.
+
 1.connect.js contain code for connecting NodeJS with MongoDB.
 
 2.script.js contain code to send data from database to frontend.
